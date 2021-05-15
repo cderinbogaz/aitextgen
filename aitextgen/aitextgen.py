@@ -64,6 +64,7 @@ class aitextgen:
     :param bos_token: String to override the beginning-of-string token
     :param eos_token: String to override the end-of-string token
     :param unk_token: String to override the unknown token
+    :lightning_processing: String to change paralellism option of the pytorch lightning library
     """
 
     openai_tf_gpt2 = None
@@ -96,6 +97,7 @@ class aitextgen:
         bos_token: str = None,
         eos_token: str = None,
         unk_token: str = None,
+        lightning_processing: str = 'dp'
         **kwargs,
     ) -> None:
 
@@ -744,9 +746,8 @@ class aitextgen:
         # which will always be the case with aitextgen training
         if is_gpu_used and benchmark:
             train_params["benchmark"] = True
-
-        if n_gpu > 1:
-            train_params["distributed_backend"] = "ddp"
+ 
+        train_params["distributed_backend"] = lightning_processing
 
         trainer = pl.Trainer(**train_params)
         trainer.fit(train_model)
