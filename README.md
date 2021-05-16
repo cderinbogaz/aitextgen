@@ -1,4 +1,4 @@
-# aitextgen-sagemaker
+# aitextgen-aws
 
 aitextgen is a wrapper based on the work by Max Woolf. Edited for distributed computing on AWS since current version of the aitextgen does not allow to set the parameter for Pytorch Lightnings Distributed modes.
 
