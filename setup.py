@@ -1,15 +1,15 @@
 from setuptools import setup
 
 setup(
-    name="aitextgen",
-    packages=["aitextgen"],  # this must be the same as the name above
+    name="aitextgen-aws",
+    packages=["aitextgen-aws"],  # this must be the same as the name above
     version="0.5.1",
-    description="A robust Python tool for text-based AI training and generation using GPT-2.",
+    description="Fork of aitextgen to set parallel computing settings to be able to run on AWS sagemaker.",
     long_description=open("README.md", "r", encoding="utf-8").read(),
     long_description_content_type="text/markdown",
-    author="Max Woolf",
-    author_email="max@minimaxir.com",
-    url="https://github.com/minimaxir/aitextgen",
+    author="Original work by Max Woolf, forked by Ceyhun Derinbogaz",
+    author_email="ceyhun@textcortex.com",
+    url="https://github.com/cderinbogaz/aitextgen-aws",
     keywords=["gpt-2", "gpt2", "text generation", "ai"],
     classifiers=[],
     license="MIT",
